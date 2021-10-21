@@ -1,0 +1,20 @@
+NAME = ex01
+
+CC = clang++
+
+SRCS = Contact.cpp \
+		PhoneBook.cpp \
+		main.cpp  \
+	
+OBJS = $(SRCS:.cpp=.o)
+
+FLAGS = -Wall -Werror -Wextra 
+
+all: $(OBJS)
+	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
+
+clean:
+	rm -f $(OBJS)
+
+fclean: clean
+	rm -f $(NAME)
