@@ -3,6 +3,7 @@
 int main(int argc, char const *argv[])
 {
 	std::string	buffer;
+	PhoneBook	pb;
 
 	std::cout << "Enter a word: ";
 	std::cin >> buffer;
