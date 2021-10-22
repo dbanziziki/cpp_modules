@@ -5,6 +5,8 @@ int main(int argc, char const *argv[])
 	std::string	buffer;
 	PhoneBook	pb;
 
+	(void)argv;
+	(void)argc;
 	while (!std::cin.eof())
 	{
 		std::cout << "Enter a command: ";

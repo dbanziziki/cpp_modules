@@ -3,15 +3,26 @@
 class Contact
 {
 private:
+	std::string _first_name;
+	std::string _last_name;
+	std::string _nickname;
+	std::string _darkest_secret;
+	std::string _phone_number;
 public:
-    std::string first_name;
-    std::string last_name;
-    std::string nickname;
-    std::string darkest_secret;
-    std::string phone_number;
+	Contact();
+	~Contact();
 
-    Contact(std::string first_name, std::string last_name, std::string nickname,
-        std::string darkest_secret, int phone_number);
-    Contact();
-    ~Contact();
+	/*getters*/
+	std::string getFirstName( void );
+	std::string getLastName( void );
+	std::string getNickname( void );
+	std::string getDarkestSecret( void );
+	std::string getPhoneNumber( void );
+
+	/*setters*/
+	void    setFirstName( std::string firstName );
+	void    setLastName( std::string lastName );
+	void    setNickname( std::string nickname );
+	void    setDarkestSecret( std::string secret);
+	void    setPhoneNumber( std::string phoneNumber );
 };

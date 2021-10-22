@@ -15,8 +15,6 @@ int main(int argc, char const *argv[])
 			std::string str = argv[i];
 			std::transform(str.begin(), str.end(), str.begin(), toupper);
 			std::cout << str;
-			if (i < argc - 1)
-				std::cout << " ";
 		}
 		std::cout << std::endl;
 	}
