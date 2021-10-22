@@ -1,13 +1,17 @@
 #include "Contact.hpp"
+#include <cctype>
+#include <iomanip>
 
 class PhoneBook
 {
 private:
     Contact saved_contacts[8];
-    int     size;
+    int     _index;
+
+    std::string _get_max_char(std::string str) const;
+    void        _display_contacts();
 public:
     PhoneBook();
-    PhoneBook(int size);
     ~PhoneBook();
 
     void    add_contact();

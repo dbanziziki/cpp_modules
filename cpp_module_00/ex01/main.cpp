@@ -5,13 +5,22 @@ int main(int argc, char const *argv[])
 	std::string	buffer;
 	PhoneBook	pb;
 
-	std::cout << "Enter a word: ";
-	std::cin >> buffer;
-	std::cout << buffer << std::endl;
-	if (buffer.compare("EXIT") == 0)
+	while (!std::cin.eof())
 	{
-		std::cout << "About to exit the program" << std::endl;
-		return (1);
+		std::cout << "Enter a command: ";
+		std::cin >> buffer;
+		std::transform(buffer.begin(), buffer.end(), buffer.begin(), toupper);
+		if (buffer.compare("EXIT") == 0)
+			return (0);
+		else if (buffer.compare("ADD") == 0)
+			pb.add_contact();
+		else if (buffer.compare("SEARCH") == 0)
+			pb.search_contact();
+		else
+		{
+			std::cout << "Wrong command" << std::endl;
+			std::cout << "You can use ADD, SEARCH or EXIT" << std::endl;
+		}
 	}
 	return 0;
 }
