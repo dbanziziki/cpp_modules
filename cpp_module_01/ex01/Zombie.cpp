@@ -6,7 +6,6 @@ Zombie::Zombie( std::string name ) : name(name)
 
 Zombie::Zombie( void )
 {
-
 }
 
 Zombie::~Zombie( void )

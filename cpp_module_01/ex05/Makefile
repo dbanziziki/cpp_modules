@@ -1,8 +1,8 @@
-NAME = ex02
+NAME = ex05
 
 CC = clang++
 
-SRCS = main.cpp
+SRCS = main.cpp Karen.cpp
 
 FLAG = -Wall -Werror -Wextra
 

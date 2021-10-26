@@ -1,4 +1,4 @@
-NAME = ex02
+NAME = replace
 
 CC = clang++
 

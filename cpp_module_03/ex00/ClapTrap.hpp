@@ -19,6 +19,11 @@ public:
     void    attack( std::string const & target );
     void    takeDamage( unsigned int amount );
     void    beRepaired( unsigned int amount );
+
+    int         getEnergyPoint( void );
+    std::string getName( void );
+    int         getHitPoints( void );
+    int         getAttackDamage( void );
 };
 
 #endif

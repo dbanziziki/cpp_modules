@@ -1,5 +1,1 @@
-ls | grep .cpp
-
-cat << EOF > outfile
-    
-EOF
+cat template > $1/Makefile

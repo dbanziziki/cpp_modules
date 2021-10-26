@@ -6,8 +6,9 @@ int main(int argc, char const *argv[])
     (void)argv;
 
     Zombie  charles("Charles");
-    Zombie  *Lee = new Zombie("Lee");
+    Zombie  *Lee = newZombie("Lee");
 
+    randomChump("Randomi");
     charles.announce();
     Lee->announce();
     delete Lee;

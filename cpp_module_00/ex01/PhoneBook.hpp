@@ -1,3 +1,6 @@
+#ifndef __PHONEBOOK_H_
+# define __PHONEBOOK_H_
+
 #include "Contact.hpp"
 #include <cctype>
 #include <iomanip>
@@ -17,3 +20,5 @@ public:
     void    add_contact();
     void    search_contact();
 };
+
+#endif

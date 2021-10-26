@@ -1,8 +1,11 @@
-NAME = ex02
+NAME = ex03
 
 CC = clang++
 
-SRCS = main.cpp
+SRCS = main.cpp \
+		HumanA.cpp \
+		HumanB.cpp \
+		Weapon.cpp \
 
 FLAG = -Wall -Werror -Wextra
 

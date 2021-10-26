@@ -1,50 +1,43 @@
 #include <iostream>
 
-class Test
-{
+class Integer {
 private:
-	int age;
-public:
-	int const man;
+	int	_n;
 
-	Test(int man);
-	Test(void);
-	~Test();
-	int getAge(void) const;
-	void	setAge(int age);
+public:
+	Integer( int const n );
+	~Integer( void );
+
+	int			getValue( void ) const;
+	Integer&	operator=( Integer const & rhs );
+	Integer		operator+( Integer const & rhs ) const;
 };
 
-namespace foo{
-	int x = 17;
-	namespace inerfoo {
-		int y = 20;
-	}
+int		Integer::getValue( void ) const
+{
+	return this->_n;
 }
 
-void	Test::setAge(int age)
+Integer&	Integer::operator=( Integer const & rhs )
 {
-	this->age = age;
+	std::cout << "Assining " << this->_n << " to " << rhs.getValue() << std::endl;
+	this->_n = rhs.getValue();
+	return *this;
 }
 
-int	Test::getAge() const
+Integer		Integer::operator+( Integer const & rhs ) const
 {
-	return (this->age);
-}
-
-Test::Test(int man) : man(man), age(23)
-{
-}
-
-Test::~Test()
-{
+	std::cout << "Adding " << this->_n << " to " << rhs.getValue() << std::endl;
+	return Integer(this->_n + rhs.getValue());
 }
 
 int main(int argc, char const *argv[])
 {
-	Test	test(45);
+	Integer	p(7);
+	Integer	k(8);
 
-	std::cout << test.getAge() << std::endl;
-	test.setAge(45);
-	std::cout << test.getAge() << std::endl;
+	std::cout << k.getValue() << std::endl;
+	k = k + p;
+	std::cout << k.getValue() << std::endl;
 	return 0;
 }
