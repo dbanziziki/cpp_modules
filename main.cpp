@@ -12,6 +12,22 @@ public:
 	Integer&	operator=( Integer const & rhs );
 	Integer		operator+( Integer const & rhs ) const;
 };
+std::ostream&	operator<<( std::ostream& o, Integer const & rhs );
+
+std::ostream&	operator<<( std::ostream& o, Integer const & rhs )
+{
+	o << rhs.getValue();
+	return o;
+}
+
+Integer::Integer(int n) : _n(n)
+{
+	std::cout << "constructed " << _n << std::endl;
+}
+
+Integer::~Integer( void )
+{
+}
 
 int		Integer::getValue( void ) const
 {
@@ -36,8 +52,8 @@ int main(int argc, char const *argv[])
 	Integer	p(7);
 	Integer	k(8);
 
-	std::cout << k.getValue() << std::endl;
+	std::cout << k << std::endl;
 	k = k + p;
-	std::cout << k.getValue() << std::endl;
+	std::cout << p << std::endl;
 	return 0;
 }
