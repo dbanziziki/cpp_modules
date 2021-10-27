@@ -2,7 +2,7 @@ NAME = ex02
 
 CC = clang++
 
-SRCS = main.cpp
+SRCS = main.cpp Fixed.cpp
 
 FLAG = -Wall -Werror -Wextra -std=c++98
 

@@ -3,18 +3,16 @@
 
 #include <iostream>
 
-class Zombie
-{
-private:
-
-public:
-	std::string	name;
-	Zombie( void );
-	Zombie( std::string name );
-	~Zombie( void );
-	void	announce( void );
+class Zombie {
+ private:
+ public:
+  std::string name;
+  Zombie(void);
+  Zombie(std::string name);
+  ~Zombie(void);
+  void announce(void);
 };
 
-Zombie  *newZombie(std::string name);
-void    randomChump( std::string name );
+Zombie *newZombie(std::string name);
+void randomChump(std::string name);
 #endif
