@@ -16,7 +16,7 @@ ClapTrap& ClapTrap::operator=(ClapTrap const& rhs) {
   return *this;
 }
 
-ClapTrap::ClapTrap(std::string name)
+ClapTrap::ClapTrap(std::string const& name)
     : name(name), HitPoints(10), EnergyPoints(10), AttackDamage(0) {
   std::cout << "ClapTrap " << name << " initialized" << std::endl;
 }

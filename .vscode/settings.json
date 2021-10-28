@@ -60,6 +60,7 @@
         "utility": "cpp",
         "vector": "cpp",
         "fstream": "cpp",
-        "iomanip": "cpp"
+        "iomanip": "cpp",
+        "memory_resource": "cpp"
     }
 }

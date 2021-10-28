@@ -4,14 +4,14 @@
 #include <iostream>
 
 class ClapTrap {
- private:
+ protected:
   std::string name;
   int HitPoints;
   int EnergyPoints;
   int AttackDamage;
 
  public:
-  ClapTrap(std::string name);
+  ClapTrap(std::string const& name);
   ClapTrap(ClapTrap const& src);
   ClapTrap(void);
   ~ClapTrap(void);
