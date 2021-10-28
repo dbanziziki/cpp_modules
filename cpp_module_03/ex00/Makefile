@@ -4,7 +4,7 @@ CC = clang++
 
 SRCS = main.cpp ClapTrap.cpp
 
-FLAG = -Wall -Werror -Wextra
+FLAG = -Wall -Werror -Wextra -std=c++98
 
 OBJS = $(SRCS:.cpp=.o)
 
