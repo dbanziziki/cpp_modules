@@ -61,6 +61,7 @@
         "vector": "cpp",
         "fstream": "cpp",
         "iomanip": "cpp",
-        "memory_resource": "cpp"
+        "memory_resource": "cpp",
+        "__functional_03": "cpp"
     }
 }

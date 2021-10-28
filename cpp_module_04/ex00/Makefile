@@ -1,8 +1,8 @@
-NAME = ex03
+NAME = ex00
 
 CC = clang++
 
-SRCS = main.cpp ClapTrap.cpp FragTrap.cpp ScavTrap.cpp DiamondTrap.cpp
+SRCS = main.cpp
 
 FLAG = -Wall -Werror -Wextra -std=c++98
 
