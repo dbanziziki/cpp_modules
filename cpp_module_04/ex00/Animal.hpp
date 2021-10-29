@@ -8,13 +8,14 @@ class Animal {
     std::string type;
 
   public:
-    Animal(/* args */);
+    Animal(void);
+    Animal(std::string type);
     Animal(Animal const &src);
-    ~Animal();
+    virtual ~Animal();
 
     Animal &operator=(Animal const &rhs);
 
-    virtual void makeSound();
+    virtual void makeSound() = 0;
 };
 
 #endif

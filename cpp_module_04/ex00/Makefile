@@ -2,7 +2,7 @@ NAME = ex00
 
 CC = clang++
 
-SRCS = main.cpp
+SRCS = main.cpp Dog.cpp Cat.cpp Animal.cpp
 
 FLAG = -Wall -Werror -Wextra -std=c++98
 

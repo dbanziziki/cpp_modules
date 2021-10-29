@@ -1,15 +1,13 @@
 #include "Zombie.hpp"
 
-int main(int argc, char const *argv[]) {
-  (void)argc;
-  (void)argv;
+int main(void) {
 
-  Zombie charles("Charles");
-  Zombie *Lee = newZombie("Lee");
+    Zombie charles("Charles");
+    Zombie *Lee = newZombie("Lee");
 
-  randomChump("Randomi");
-  charles.announce();
-  Lee->announce();
-  delete Lee;
-  return 0;
+    charles.announce();
+    Lee->announce();
+    delete Lee;
+    randomChump("Randomi");
+    return 0;
 }

@@ -11,7 +11,9 @@ OBJS = $(SRCS:.cpp=.o)
 %.o:%.cpp
 	$(CC) $(FLAG) -c $< -o $@
 
-all: $(OBJS)
+all: $(NAME)
+
+$(NAME): $(OBJS)
 	$(CC) $(FLAG) $(OBJS) -o $(NAME)
 
 clean:

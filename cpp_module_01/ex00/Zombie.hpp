@@ -4,13 +4,14 @@
 #include <iostream>
 
 class Zombie {
- private:
- public:
-  std::string name;
-  Zombie(void);
-  Zombie(std::string name);
-  ~Zombie(void);
-  void announce(void);
+  private:
+    std::string name;
+
+  public:
+    Zombie(void);
+    Zombie(std::string name);
+    ~Zombie(void);
+    void announce(void);
 };
 
 Zombie *newZombie(std::string name);

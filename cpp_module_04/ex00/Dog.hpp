@@ -8,7 +8,8 @@ class Dog : public Animal {
     /* data */
   public:
     Dog(/* args */);
-    ~Dog();
+    Dog(std::string type);
+    virtual ~Dog();
     Dog(Dog const &src);
 
     Dog &operator=(Dog const &rhs);
