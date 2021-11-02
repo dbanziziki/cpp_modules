@@ -10,7 +10,7 @@ int main(void) {
         std::cout << "The point is inside the triangle" << std::endl;
     } else
         std::cout << "The point is not inside the triangle" << std::endl;
-    if (bsp(a, b, c, Point(Fixed(10), Fixed(50)))) {
+    if (bsp(a, b, c, Point(Fixed(10), Fixed(35)))) {
         std::cout << "The point is inside the triangle" << std::endl;
     } else
         std::cout << "The point is not inside the triangle" << std::endl;

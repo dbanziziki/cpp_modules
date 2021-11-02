@@ -28,8 +28,8 @@ void DiamondTrap::attack(std::string const &target) {
 }
 
 void DiamondTrap::whoAmI() {
-    std::cout << "DiamondTrap " << this->name << "ClapTrap name "
-              << ClapTrap::name << std::endl;
+    std::cout << "DiamondTrap " << this->name << " ClapTrap name is "
+              << ClapTrap::getName() << std::endl;
 }
 
 DiamondTrap &DiamondTrap::operator=(DiamondTrap const &rhs) {

@@ -12,7 +12,7 @@ class Point {
     Point(Point const &src);
     Point(Fixed const &x, Fixed const &y);
     Point(void);
-    ~Point(void);
+    virtual ~Point(void);
 
     Fixed const &getX(void) const;
     Fixed const &getY(void) const;
