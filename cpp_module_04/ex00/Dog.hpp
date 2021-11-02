@@ -7,7 +7,7 @@ class Dog : public Animal {
   private:
     /* data */
   public:
-    Dog(/* args */);
+    Dog(void);
     Dog(std::string type);
     virtual ~Dog();
     Dog(Dog const &src);

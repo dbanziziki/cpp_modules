@@ -4,20 +4,20 @@
 #include "Fixed.hpp"
 
 class Point {
- private:
-  Fixed const _x;
-  Fixed const _y;
+  private:
+    Fixed const _x;
+    Fixed const _y;
 
- public:
-  Point(Point const& src);
-  Point(Fixed const& x, Fixed const& y);
-  Point(void);
-  ~Point(void);
+  public:
+    Point(Point const &src);
+    Point(Fixed const &x, Fixed const &y);
+    Point(void);
+    ~Point(void);
 
-  Fixed const& getX(void) const;
-  Fixed const& getY(void) const;
+    Fixed const &getX(void) const;
+    Fixed const &getY(void) const;
 
-  Point& operator=(Point const& rhs);
+    Point &operator=(Point const &rhs);
 };
 
 bool bsp(Point const a, Point const b, Point const c, Point const point);

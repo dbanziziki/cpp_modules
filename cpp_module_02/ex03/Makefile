@@ -2,7 +2,7 @@ NAME = ex03
 
 CC = clang++
 
-SRCS = main.cpp Fixed.cpp
+SRCS = main.cpp Fixed.cpp Point.cpp bsp.cpp
 
 FLAG = -Wall -Werror -Wextra -std=c++98
 

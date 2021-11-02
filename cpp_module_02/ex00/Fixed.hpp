@@ -4,18 +4,18 @@
 #include <iostream>
 
 class Fixed {
- private:
-  int _n;
-  static int const _nbBits = 8;
+  private:
+    int _n;
+    static int const _nbBits = 8;
 
- public:
-  Fixed(void);
-  Fixed(Fixed const& src);
-  ~Fixed(void);
+  public:
+    Fixed(void);
+    Fixed(Fixed const &src);
+    virtual ~Fixed(void);
 
-  Fixed& operator=(Fixed const& rhs);
-  int getRawBits(void) const;
-  void setRawBits(int const raw);
+    Fixed &operator=(Fixed const &rhs);
+    int getRawBits(void) const;
+    void setRawBits(int const raw);
 };
 
 #endif
