@@ -29,5 +29,6 @@ FragTrap &FragTrap::operator=(FragTrap const &rhs) {
 }
 
 void FragTrap::highFivesGuys(void) {
-    std::cout << "High five guys" << std::endl;
+    std::cout << "FragTrap "
+              << "High five guys" << std::endl;
 }

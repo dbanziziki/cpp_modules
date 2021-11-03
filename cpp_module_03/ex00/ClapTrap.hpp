@@ -4,28 +4,28 @@
 #include <iostream>
 
 class ClapTrap {
- private:
-  std::string name;
-  int HitPoints;
-  int EnergyPoints;
-  int AttackDamage;
+  private:
+    std::string name;
+    int HitPoints;
+    int EnergyPoints;
+    int AttackDamage;
 
- public:
-  ClapTrap(std::string name);
-  ClapTrap(ClapTrap const& src);
-  ClapTrap(void);
-  ~ClapTrap(void);
+  public:
+    ClapTrap(std::string name);
+    ClapTrap(ClapTrap const &src);
+    ClapTrap(void);
+    ~ClapTrap(void);
 
-  ClapTrap& operator=(ClapTrap const& rhs);
+    ClapTrap &operator=(ClapTrap const &rhs);
 
-  void attack(std::string const& target);
-  void takeDamage(unsigned int amount);
-  void beRepaired(unsigned int amount);
+    void attack(std::string const &target);
+    void takeDamage(unsigned int amount);
+    void beRepaired(unsigned int amount);
 
-  int getEnergyPoint(void);
-  std::string getName(void);
-  int getHitPoints(void);
-  int getAttackDamage(void);
+    int getEnergyPoint(void);
+    std::string getName(void);
+    int getHitPoints(void);
+    int getAttackDamage(void);
 };
 
 #endif
