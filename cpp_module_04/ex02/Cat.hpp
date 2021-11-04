@@ -16,7 +16,7 @@ class Cat : public Animal {
 
     Cat &operator=(Cat const &rhs);
 
-    virtual void makeSound();
+    virtual void makeSound() const;
     Brain *getBrain() const;
 };
 

@@ -25,7 +25,7 @@ Cat &Cat::operator=(Cat const &rhs) {
     return *this;
 }
 
-void Cat::makeSound() {
+void Cat::makeSound() const {
     std::cout << "Cat::makeSound() The " << this->type << " says MIAOU"
               << std::endl;
 }
