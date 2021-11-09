@@ -17,6 +17,7 @@ class Dog : public Animal {
     Dog &operator=(Dog const &rhs);
     virtual void makeSound() const;
     Brain *getBrain() const;
+    std::string getType() const;
 };
 
 #endif

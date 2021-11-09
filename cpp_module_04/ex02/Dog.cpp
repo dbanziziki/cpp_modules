@@ -17,7 +17,10 @@ Dog::Dog(std::string type) : Animal(type) {
     _brain = new Brain();
 }
 
-Dog::Dog(Dog const &src) { _brain = new Brain(*src.getBrain()); }
+Dog::Dog(Dog const &src) {
+    this->type = src.getType();
+    _brain = new Brain(*src.getBrain());
+}
 
 Dog &Dog::operator=(Dog const &rhs) {
     this->~Dog();
@@ -32,3 +35,5 @@ void Dog::makeSound() const {
 }
 
 Brain *Dog::getBrain() const { return this->_brain; }
+
+std::string Dog::getType() const { return this->type; }

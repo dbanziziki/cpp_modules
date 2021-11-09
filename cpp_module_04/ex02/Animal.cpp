@@ -19,3 +19,5 @@ Animal &Animal::operator=(Animal const &rhs) {
     this->type = rhs.type;
     return *this;
 }
+
+std::string Animal::getType() const { return this->type; }

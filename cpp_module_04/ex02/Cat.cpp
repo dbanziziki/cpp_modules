@@ -11,7 +11,10 @@ Cat::Cat(std::string type) : Animal(type) {
     _brain = new Brain();
 }
 
-Cat::Cat(Cat const &src) { _brain = new Brain(*src.getBrain()); }
+Cat::Cat(Cat const &src) {
+    this->type = src.getType();
+    _brain = new Brain(*src.getBrain());
+}
 
 Cat::~Cat() {
     std::cout << this->type << " Cat::~Cat() destructor called" << std::endl;
@@ -31,3 +34,5 @@ void Cat::makeSound() const {
 }
 
 Brain *Cat::getBrain() const { return this->_brain; }
+
+std::string Cat::getType() const { return this->type; }

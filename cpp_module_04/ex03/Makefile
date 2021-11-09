@@ -1,8 +1,8 @@
-NAME = ex02
+NAME = ex03
 
 CC = clang++
 
-SRCS = main.cpp Dog.cpp Cat.cpp Animal.cpp Brain.cpp
+SRCS = main.cpp
 
 FLAG = -Wall -Werror -Wextra -std=c++98
 

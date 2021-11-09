@@ -18,6 +18,7 @@ class Cat : public Animal {
 
     virtual void makeSound() const;
     Brain *getBrain() const;
+    std::string getType() const;
 };
 
 #endif
