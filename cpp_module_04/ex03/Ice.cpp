@@ -6,7 +6,10 @@ Ice::~Ice() {}
 
 Ice::Ice(Ice const &src) : AMateria(src) {}
 
-Ice &Ice::operator=(Ice const &rhs) { AMateria::operator=(rhs); }
+Ice &Ice::operator=(Ice const &rhs) {
+    AMateria::operator=(rhs);
+    return *this;
+}
 
 AMateria *Ice::clone() const { return new Ice(); }
 

@@ -11,7 +11,10 @@ AMateria *Cure::clone() const {
 
 Cure::Cure(Cure const &src) : AMateria(src) {}
 
-Cure &Cure::operator=(Cure const &rhs) { AMateria::operator=(rhs); }
+Cure &Cure::operator=(Cure const &rhs) {
+    AMateria::operator=(rhs);
+    return *this;
+}
 
 void Cure::use(ICharacter &target) {
     std::cout << "* heals " << target.getName() << "'s wounds"
