@@ -2,7 +2,7 @@ NAME = ex03
 
 CC = clang++
 
-SRCS = main.cpp
+SRCS = main.cpp AMateria.cpp Character.cpp Ice.cpp Cure.cpp MateriaSource.cpp
 
 FLAG = -Wall -Werror -Wextra -std=c++98
 

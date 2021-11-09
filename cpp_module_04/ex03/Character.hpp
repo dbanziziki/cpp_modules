@@ -12,14 +12,16 @@ class Character : public ICharacter {
     Character(std::string const &name);
     Character(Character const &src);
     Character();
-    ~Character();
+    virtual ~Character();
 
     Character &operator=(Character const &rhs);
 
+    AMateria *getMateria(unsigned int idx) const;
+
     std::string const &getName() const;
-    void equip(AMateria *m);
-    void unequip(int idx);
-    void use(int idx, ICharacter &target);
+    virtual void equip(AMateria *m);
+    virtual void unequip(int idx);
+    virtual void use(int idx, ICharacter &target);
 };
 
 #endif

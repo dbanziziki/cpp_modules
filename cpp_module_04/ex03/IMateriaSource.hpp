@@ -1,6 +1,6 @@
 
-#ifndef __AMATERIA_H__
-#define __AMATERIA_H__
+#ifndef __IAMATERIASOURCE_H__
+#define __IAMATERIASOURCE_H__
 
 #include "AMateria.hpp"
 #include <iostream>
