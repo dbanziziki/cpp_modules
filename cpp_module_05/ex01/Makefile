@@ -1,8 +1,8 @@
-NAME = ex02
+NAME = ex00
 
 CC = clang++
 
-SRCS = main.cpp
+SRCS = main.cpp Bureaucrat.cpp Form.cpp
 
 FLAG = -Wall -Werror -Wextra -std=c++98
 
