@@ -1,8 +1,8 @@
-NAME = ex01
+NAME = ex03
 
 CC = clang++
 
-SRCS = main.cpp Bureaucrat.cpp Form.cpp
+SRCS = main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp Intern.cpp
 
 FLAG = -Wall -Werror -Wextra -std=c++98
 

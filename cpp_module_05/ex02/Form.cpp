@@ -2,6 +2,15 @@
 
 Form::Form(std::string const &name, int grade_sign, int grade_exec)
     : _name(name),
+      _target(""),
+      _grade_sign(grade_sign),
+      _grade_exec(grade_exec),
+      _signed(0) {}
+
+Form::Form(std::string const &target, std::string const &name, int grade_sign,
+           int grade_exec)
+    : _name(name),
+      _target(target),
       _grade_sign(grade_sign),
       _grade_exec(grade_exec),
       _signed(0) {}
@@ -10,6 +19,7 @@ Form::~Form() {}
 
 Form::Form(Form const &src)
     : _name(src.getName()),
+      _target(src.getTarget()),
       _grade_sign(src.getGradeSign()),
       _grade_exec(src.getGradeExec()) {
     this->_signed = src.getSigned();
@@ -26,25 +36,36 @@ int Form::getGradeSign() const { return this->_grade_sign; }
 
 std::string Form::getName() const { return this->_name; }
 
+std::string Form::getTarget() const { return this->_target; }
+
 bool Form::getSigned() const { return this->_signed; }
 
 void Form::beSigned(Bureaucrat const &b) {
     if (b.getGrade() > _grade_sign) {
-        std::cout << b.getName() << " cannot sign because his grade is too low"
-                  << std::endl;
         throw Form::GradeTooLowException();
     }
     this->_signed = true;
-    std::cout << b.getName() << " signs " << this->getName() << std::endl;
+    std::cout << b.getName() << " signs " << *this << std::endl;
+}
+
+void Form::execute(Bureaucrat const &executor) const {
+    if (!this->getSigned()) {
+        throw Form::FormNotSignedException();
+    }
+    if (this->getGradeExec() < executor.getGrade())
+        throw Form::GradeTooLowException();
 }
 
 std::ostream &operator<<(std::ostream &os, Form const &rhs) {
-    os << "Name: " << rhs.getName() << " sign: " << rhs.getGradeSign()
+    os << "< "
+       << "Name: " << rhs.getName() << " sign: " << rhs.getGradeSign()
        << " exec: " << rhs.getGradeExec() << " signed: ";
     if (rhs.getSigned()) {
-        std::cout << "true";
+        os << "true"
+           << " >";
     } else {
-        std::cout << "false";
+        os << "false"
+           << " >";
     }
     return os;
 }

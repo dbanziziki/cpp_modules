@@ -39,7 +39,22 @@ void Bureaucrat::signForm(Form &f) {
     try {
         f.beSigned(*this);
     } catch (const std::exception &e) {
-        // handle the error
+        std::cout << this->getName() << " cannot sign " << f
+                  << " beacause his grade is too low" << std::endl;
+    }
+}
+
+void Bureaucrat::executeForm(Form &form) {
+    try {
+        form.action(*this);
+        std::cout << *this << " executed: " << form << " with success"
+                  << std::endl;
+    } catch (const Form::FormNotSignedException &e) {
+        std::cout << *this << " cannot execute: " << form << "it is not signed"
+                  << std::endl;
+    } catch (const Form::GradeTooLowException &e) {
+        std::cout << *this << " cannot execute: " << form
+                  << " his grade is to low" << std::endl;
     }
 }
 
