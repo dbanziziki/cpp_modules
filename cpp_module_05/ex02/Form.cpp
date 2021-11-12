@@ -45,7 +45,6 @@ void Form::beSigned(Bureaucrat const &b) {
         throw Form::GradeTooLowException();
     }
     this->_signed = true;
-    std::cout << b.getName() << " signs " << *this << std::endl;
 }
 
 void Form::execute(Bureaucrat const &executor) const {

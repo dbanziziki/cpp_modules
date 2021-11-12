@@ -23,7 +23,7 @@ void ShrubberyCreationForm::action(Bureaucrat const &executor) {
     std::ofstream ofs(this->getTarget() + "_shrubbery");
 
     if (!ofs.good()) {
-        std::cout << "Error creating the file" << std::endl;
+        std::cerr << "Error creating the file" << std::endl;
         return;
     }
     ofs << "	   		  ,@@@@@@@," << std::endl;
@@ -36,4 +36,5 @@ void ShrubberyCreationForm::action(Bureaucrat const &executor) {
     ofs << "	   |o|         | |        | |" << std::endl;
     ofs << "	   |.|         | |        | |" << std::endl;
     ofs << "	jgs \\/ ._  /_/  ,//__\\/. _//__/_" << std::endl;
+    ofs.close();
 }

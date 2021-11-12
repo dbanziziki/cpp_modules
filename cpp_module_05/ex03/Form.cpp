@@ -45,15 +45,15 @@ void Form::beSigned(Bureaucrat const &b) {
         throw Form::GradeTooLowException();
     }
     this->_signed = true;
-    std::cout << b.getName() << " signs " << *this << std::endl;
 }
 
 void Form::execute(Bureaucrat const &executor) const {
     if (!this->getSigned()) {
         throw Form::FormNotSignedException();
     }
-    if (this->getGradeExec() < executor.getGrade())
+    if (this->getGradeExec() < executor.getGrade()) {
         throw Form::GradeTooLowException();
+    }
 }
 
 std::ostream &operator<<(std::ostream &os, Form const &rhs) {

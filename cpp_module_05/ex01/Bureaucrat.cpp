@@ -38,8 +38,10 @@ void Bureaucrat::decrementGrade() {
 void Bureaucrat::signForm(Form &f) {
     try {
         f.beSigned(*this);
+        std::cout << *this << " signs " << f << std::endl;
     } catch (const std::exception &e) {
-        // handle the error
+        std::cout << *this << " cannot sign because his grade is too low"
+                  << std::endl;
     }
 }
 

@@ -27,7 +27,7 @@ class Form {
     Form(std::string const &target, std::string const &name, int grade_sign,
          int grade_exec);
     Form(Form const &src);
-    ~Form();
+    virtual ~Form();
 
     std::string getName() const;
     int getGradeSign() const;

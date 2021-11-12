@@ -36,6 +36,7 @@ class Form {
     std::string getTarget() const;
 
     void beSigned(Bureaucrat const &b);
+    void execute(Bureaucrat const &executor) const;
 
     virtual void action(Bureaucrat const &executor) = 0;
 
@@ -55,8 +56,6 @@ class Form {
        public:
         virtual const char *what() const throw() { return "Grade to low"; }
     };
-
-    void execute(Bureaucrat const &executor) const;
 };
 
 std::ostream &operator<<(std::ostream &os, Form const &rhs);

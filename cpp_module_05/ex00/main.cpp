@@ -8,13 +8,28 @@ int main() {
     try {
         Pit.decrementGrade();
     } catch (Bureaucrat::GradeTooLowException &e) {
-        std::cout << "You cant go lower\n" << e.what() << std::endl;
+        std::cerr << e.what() << std::endl;
     }
 
     try {
         Kat.incrementGrade();
     } catch (Bureaucrat::GradeTooHighException &e) {
-        std::cout << "You cant go higher\n" << e.what() << std::endl;
+        std::cerr << e.what() << std::endl;
+    }
+    try {
+        Pit.incrementGrade();
+        std::cout << "grade upgraded new grade is " << Pit.getGrade()
+                  << std::endl;
+    } catch (const std::exception &e) {
+        std::cerr << e.what() << std::endl;
+    }
+
+    try {
+        Kat.decrementGrade();
+        std::cout << "grade downgraded new grade is " << Kat.getGrade()
+                  << std::endl;
+    } catch (const std::exception &e) {
+        std::cerr << e.what() << std::endl;
     }
     return 0;
 }

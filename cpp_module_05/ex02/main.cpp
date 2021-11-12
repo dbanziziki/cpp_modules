@@ -19,6 +19,7 @@ int main() {
     Kat.executeForm(robo);
     Pit.signForm(robo);
     Pit.executeForm(robo);
+    Kat.signForm(shru);
     Kat.executeForm(shru);
     Pit.executeForm(shru);
     return 0;
