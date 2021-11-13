@@ -16,10 +16,10 @@ class Array {
     Array(unsigned int n) : _size(n) { _tab = new T[n]; }
 
     Array(Array const &src) {
-        T *tab_ref = src.getTab();
         _tab = new T[src.size()];
+        _size = src.size();
         for (unsigned int i = 0; i < _size; i++) {
-            _tab[i] = tab_ref[i];
+            _tab[i] = src[i];
         }
     }
 
@@ -33,15 +33,22 @@ class Array {
             this->~Array();
             _size = rhs.size();
             _tab = new T[rhs.size()];
-            for (int i = 0; i < rhs.size(); i++) {
+            for (unsigned int i = 0; i < rhs.size(); i++) {
                 _tab[i] = rhs[i];
             }
         }
         return *this;
     }
 
+    T &operator[](unsigned int index) const {
+        if (index < 0 || index >= this->size()) {
+            throw Array::OutOfRangeException();
+        }
+        return _tab[index];
+    }
+
     T &operator[](unsigned int index) {
-        if (index >= _size) {
+        if (index < 0 || index >= this->size()) {
             throw Array::OutOfRangeException();
         }
         return _tab[index];
