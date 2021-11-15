@@ -19,13 +19,23 @@ class Span {
     void addNumber(int newVal);
     void addNumber(std::vector<int>::iterator const &begin,
                    std::vector<int>::iterator const &end);
+
+    int shortestSpan() const;
+    int longestSpan() const;
     unsigned int getSize() const;
     std::vector<int> getVals() const;
     Span &operator=(Span const &rhs);
 
     class OutOfRangeException : public std::exception {
        public:
-        virtual const char *what() const throw() { return "out of range"; }
+        virtual const char *what() const throw() { return "not enough space"; }
+    };
+
+    class NoSpanException : public std::exception {
+       public:
+        virtual const char *what() const throw() {
+            return "no enough element in the list";
+        }
     };
 };
 

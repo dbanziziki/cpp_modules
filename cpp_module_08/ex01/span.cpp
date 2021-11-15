@@ -30,6 +30,23 @@ void Span::addNumber(int newVal) {
 void Span::addNumber(std::vector<int>::iterator const &begin,
                      std::vector<int>::iterator const &end) {
     unsigned int size = std::distance(begin, end);
-    if (size >= this->getSize()) throw Span::OutOfRangeException();
+    if (size > this->getSize()) throw Span::OutOfRangeException();
     this->_vals.insert(this->_vals.end(), begin, end);
+}
+
+int Span::shortestSpan() const {
+    if (_vals.size() <= 1) throw Span::NoSpanException();
+    std::vector<int> temp = this->getVals();
+    std::sort(temp.begin(), temp.end());
+    return (temp[1] - temp[0]);
+}
+
+int Span::longestSpan() const {
+    if (_vals.size() <= 1) throw Span::NoSpanException();
+    std::vector<int> temp = this->getVals();
+    std::sort(temp.begin(), temp.end());
+    int min = temp[0];
+    std::reverse(temp.begin(), temp.end());
+    int max = temp[0];
+    return (max - min);
 }
