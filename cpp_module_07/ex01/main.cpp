@@ -2,11 +2,6 @@
 
 #include "iter.hpp"
 
-template <typename T>
-void print_val(T p) {
-    std::cout << p << std::endl;
-}
-
 int main() {
     std::string strs[3] = {"hello", "there", "you"};
     int vals[3] = {1, 2, 3};

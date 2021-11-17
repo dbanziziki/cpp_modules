@@ -8,4 +8,9 @@ void iter(T array[], int size, void (*fn)(T const &p)) {
     }
 }
 
+template <typename T>
+void print_val(T p) {
+    std::cout << p << std::endl;
+}
+
 #endif
