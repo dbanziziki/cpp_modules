@@ -62,33 +62,37 @@ void identify(Base &p) {
     try {
         temp = dynamic_cast<A &>(p);
         std::cout << "A" << std::endl;
+        return;
     } catch (const std::exception &e) {
-        std::cerr << e.what() << std::endl;
-    }
-    try {
-        temp = dynamic_cast<B &>(p);
-        std::cout << "B" << std::endl;
-    } catch (const std::exception &e) {
-        std::cerr << e.what() << std::endl;
-    }
-    try {
-        temp = dynamic_cast<C &>(p);
-        std::cout << "C" << std::endl;
-    } catch (const std::exception &e) {
-        std::cerr << e.what() << std::endl;
+        try {
+            temp = dynamic_cast<B &>(p);
+            std::cout << "B" << std::endl;
+            return;
+        } catch (const std::exception &e) {
+            try {
+                temp = dynamic_cast<C &>(p);
+                std::cout << "C" << std::endl;
+                return;
+            } catch (const std::exception &e) {
+                std::cerr << e.what() << std::endl;
+            }
+        }
     }
 }
 
 int main() {
     std::srand(time(NULL));
+    std::cout << "---[dynamic_cast pointer]---" << std::endl;
     for (int i = 0; i < 10; i++) {
         Base *p = generate();
         identify(p);
+        delete p;
     }
-
+    std::cout << "---[dynamic_cast reference]---" << std::endl;
     for (int i = 0; i < 9; i++) {
         Base *p = generate();
         identify(*p);
+        delete p;
     }
     return 0;
 }
