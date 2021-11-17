@@ -6,6 +6,7 @@
 #include "ShrubberyCreationForm.hpp"
 
 int main() {
+    std::srand(time(NULL));
     Intern Leo;
     Bureaucrat Pit("Pit", 150);
     Bureaucrat Kat("Kat", 1);

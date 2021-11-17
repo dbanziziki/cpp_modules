@@ -3,7 +3,7 @@
 Bureaucrat::Bureaucrat(/* args */) : name("Default") {}
 
 Bureaucrat::Bureaucrat(std::string const &name, int grade) : name(name) {
-    if (grade < 0) throw Bureaucrat::GradeTooHighException();
+    if (grade < 1) throw Bureaucrat::GradeTooHighException();
     if (grade > 150) throw Bureaucrat::GradeTooLowException();
     this->grade = grade;
 }

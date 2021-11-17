@@ -5,7 +5,10 @@ Form::Form(std::string const &name, int grade_sign, int grade_exec)
       _target(""),
       _grade_sign(grade_sign),
       _grade_exec(grade_exec),
-      _signed(0) {}
+      _signed(0) {
+    if (_grade_exec < 1 || _grade_sign < 1) Form::GradeTooHighException();
+    if (_grade_sign > 150 || _grade_exec > 150) Form::GradeTooLowException();
+}
 
 Form::Form(std::string const &target, std::string const &name, int grade_sign,
            int grade_exec)
@@ -13,7 +16,10 @@ Form::Form(std::string const &target, std::string const &name, int grade_sign,
       _target(target),
       _grade_sign(grade_sign),
       _grade_exec(grade_exec),
-      _signed(0) {}
+      _signed(0) {
+    if (_grade_exec < 1 || _grade_sign < 1) Form::GradeTooHighException();
+    if (_grade_sign > 150 || _grade_exec > 150) Form::GradeTooLowException();
+}
 
 Form::~Form() {}
 
